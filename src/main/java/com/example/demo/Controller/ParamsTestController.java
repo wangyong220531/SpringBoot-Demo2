@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -48,6 +49,25 @@ public class ParamsTestController {
     public Map getBody(@RequestBody String content) {
         Map<String, Object> map = new HashMap<>();
         map.put("content", content);
+        return map;
+    }
+
+    @GetMapping("/cars/{path}")
+    public Map carsCell(@MatrixVariable("low") Integer low, @MatrixVariable("brand") List<String> brand, @PathVariable("path") String path) {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("low", low);
+        map.put("brand", brand);
+        map.put("path", path);
+        return map;
+    }
+
+    @GetMapping("/boss/{bossId}/{empId}")
+    public Map boss(@MatrixVariable(value = "age", pathVar = "bossId") Integer bossAge, @MatrixVariable("age") Integer empAge) {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("bossAge", bossAge);
+        map.put("empAge", empAge);
         return map;
     }
 }
