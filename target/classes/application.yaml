@@ -1,7 +1,16 @@
+#spring:
+##  mvc:
+##    static-path-pattern: /res/**
+#  web:
+#    resources:
+#      static-locations:
+#        [ classpath:/index/]
+
+server:
+  port: 6666
 spring:
-#  mvc:
-#    static-path-pattern: /res/**
-  web:
-    resources:
-      static-locations:
-        [ classpath:/index/]
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring6?characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai&allowMultiqueries=true
+    username: root
+    password: 220531
+    driver-class-name: com.mysql.cj.jdbc.Driver
