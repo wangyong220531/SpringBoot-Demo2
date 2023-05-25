@@ -29,8 +29,8 @@ public class ParamsTestController {
     }
 
     @GetMapping("/getParams")
-    public Map<String, Object> getVariable(@RequestParam("name") String paramName,
-                                           @RequestParam Map<String, String> params) {
+    public Map<String, Object> getParams(@RequestParam("name") String paramName,
+                                         @RequestParam Map<String, String> params) {
         Map<String, Object> map = new HashMap<>();
         map.put("paramName", paramName);
         map.put("params", params);
