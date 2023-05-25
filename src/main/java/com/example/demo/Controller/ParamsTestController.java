@@ -43,4 +43,11 @@ public class ParamsTestController {
         map.put("_ga", _ga);
         return map;
     }
+
+    @PostMapping("/getBody")
+    public Map getBody(@RequestBody String content) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("content", content);
+        return map;
+    }
 }
